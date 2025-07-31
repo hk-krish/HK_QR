@@ -1,9 +1,9 @@
 // @import "bootstrap/dist/css/bootstrap.min.css";
 // @import "react-toastify/dist/ReactToastify.css";
 
-@import "vendors/font-awesome.scss";
-@import "responsive.scss";
-@import "react-plugin.scss";
+// @import "vendors/font-awesome.scss";
+// @import "responsive.scss";
+// @import "react-plugin.scss";
 
 //swiper
 // @import "swiper/css";
@@ -18,4 +18,4 @@
 //react-quill-new
 // @import 'react-quill-new/dist/quill.snow.css';
 
-@import "style.scss";
+@use "style.scss";

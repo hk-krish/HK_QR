@@ -1,6 +1,8 @@
 /**=====================
     2.5 Bookmark CSS start
 ==========================**/
+@use "../utils/variables" as *;
+@use "../utils/mixin" as *;
 .bookmark {
   ul {
     li {
@@ -23,7 +25,7 @@
           input {
             width: 240px;
             background-color: $white;
-            box-shadow: 0 5px 21px rgba(0, 0, 0, 0.10);
+            box-shadow: 0 5px 21px rgba(0, 0, 0, 0.1);
           }
 
           &.open {
@@ -54,12 +56,11 @@
 
         svg {
           vertical-align: middle;
-          height: 20px;
-          width: 20px;
+          @include pixelstrap-size(20px, 20px);
         }
       }
 
-      +li {
+      + li {
         margin-left: 10px;
       }
 
@@ -77,16 +78,34 @@
     }
   }
 }
-.message-wrap {
-	.btn-mail {
-		border-radius: 2px;
-		text-align: left; 
-		padding: 13px 15px;
-		margin: 20px 0 20px;
-		letter-spacing: 1px; 
-		line-height: 12px !important;
-    background-color: rgba($primary-color, 0.3); 
-	}
+
+.offcanvas-bookmark {
+  &.page-wrapper.horizontal-wrapper {
+    .page-body-wrapper {
+      .page-body {
+        .bookmark {
+          ul {
+            li {
+              a {
+                z-index: 99999;
+                color: rgba(255, 255, 255, 0.5);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &:before {
+    position: fixed;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    @include pixelstrap-size(100%, 100%);
+    z-index: 1;
+    right: 0;
+    left: 0;
+  }
 }
 
 body.modal-open {

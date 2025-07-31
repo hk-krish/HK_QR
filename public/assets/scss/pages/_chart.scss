@@ -1,6 +1,7 @@
 /**=====================
-   3.5 Chat CSS Start
+   3.6 Chat CSS Start
 ==========================**/
+@use "../utils/variables" as *;
 //urls
 $url-0: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTYiIGhlaWdodD0iMTciPjxwYXRoIGZpbGw9IiM4ODgiIGQ9Ik0wIDE2aDE0djFIMHoiLz48cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTIsLTEwKSIgZmlsbD0iIzg4OCIgZD0iTTE3LjA5OCAyMC4zMDVjLS4xNDIuMTQ2LjEwMS4wNC4xMzcuMDA0LjAyNy0uMDI4LjIwNC0uMDkuNDg0LS4wOS4zMzguMC42MjYuMDkyLjc4Ny4yNTUuNDczLjQ3Mi40MjQuOTMyLjM5MyAxLjA3OGwtMi41MjEgMS4wNTUtMS41NzctMS41NzcgMS4wNTQtMi41MmMuMDM5LS4wMDkuMTA1LS4wMTguMTg4LS4wMTguMjE5LjAuNTU1LjA2OS44OTMuNDA3LjM3OC4zNzguMjQ2IDEuMTg4LjE2NiAxLjI3MUMxNy4wNjIgMjAuMjA3IDE3LjA2MiAyMC4yNjkgMTcuMDk4IDIwLjMwNXpNMjYuOTg0IDE0LjQ3MmMtLjAwOC0uNjc0LS42MS0xLjI1Ny0xLjMxLTEuOTMzLS4xMzQtLjEyOS0uNjc5LS42NzMtLjgwOS0uODA4LS42NzktLjcwMi0xLjI2Ni0xLjMxLTEuOTQzLTEuMzEtLjM3LjAtLjczNC4yMDctMS4xMTQuNTg3bC02Ljg1MiA2Ljg0N2MtLjAxMi4wMTYtMi44NzcgNy4zNTQtMi44NzcgNy4zNTQtLjAxMi4wMzIuMC4wNjMuMDIyLjA5MS4wMjEuMDIxLjA0NC4wMjkuMDY3LjAyOS4wMS4wLjAxOC0uMDAzLjAyOC0uMDA3LjAuMCA3LjM1Ny0yLjg2NCA3LjM2OS0yLjg3N2w2Ljg1NC02Ljg0N0MyNi44MDMgMTUuMjE2IDI2Ljk4OCAxNC44NDggMjYuOTg0IDE0LjQ3MnoiLz48L3N2Zz4=);
 $url-1: url(data:image/svg+xml;charset=utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTYiIGhlaWdodD0iMTciPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0wIDE2aDE0djFIMHoiLz48cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTIsLTEwKSIgZmlsbD0iI2ZmZiIgZD0iTTE3LjA5OCAyMC4zMDVjLS4xNDIuMTQ2LjEwMS4wNC4xMzcuMDA0LjAyNy0uMDI4LjIwNC0uMDkuNDg0LS4wOS4zMzguMC42MjYuMDkyLjc4Ny4yNTUuNDczLjQ3Mi40MjQuOTMyLjM5MyAxLjA3OGwtMi41MjEgMS4wNTUtMS41NzctMS41NzcgMS4wNTQtMi41MmMuMDM5LS4wMDkuMTA1LS4wMTguMTg4LS4wMTguMjE5LjAuNTU1LjA2OS44OTMuNDA3LjM3OC4zNzguMjQ2IDEuMTg4LjE2NiAxLjI3MUMxNy4wNjIgMjAuMjA3IDE3LjA2MiAyMC4yNjkgMTcuMDk4IDIwLjMwNXpNMjYuOTg0IDE0LjQ3MmMtLjAwOC0uNjc0LS42MS0xLjI1Ny0xLjMxLTEuOTMzLS4xMzQtLjEyOS0uNjc5LS42NzMtLjgwOS0uODA4LS42NzktLjcwMi0xLjI2Ni0xLjMxLTEuOTQzLTEuMzEtLjM3LjAtLjczNC4yMDctMS4xMTQuNTg3bC02Ljg1MiA2Ljg0N2MtLjAxMi4wMTYtMi44NzcgNy4zNTQtMi44NzcgNy4zNTQtLjAxMi4wMzIuMC4wNjMuMDIyLjA5MS4wMjEuMDIxLjA0NC4wMjkuMDY3LjAyOS4wMS4wLjAxOC0uMDAzLjAyOC0uMDA3LjAuMCA3LjM1Ny0yLjg2NCA3LjM2OS0yLjg3N2w2Ljg1NC02Ljg0N0MyNi44MDMgMTUuMjE2IDI2Ljk4OCAxNC44NDggMjYuOTg0IDE0LjQ3MnoiLz48L3N2Zz4=);
@@ -32,18 +33,73 @@ $url-4: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAYAAADNo/U5AA
   line-height: 21px;
 }
 
-
 .chart-block {
   canvas {
     width: 100% !important;
   }
 
   .chart-overflow {
-    overflow: hidden;
     text-align: center;
+    border-radius: 15px;
+    overflow: hidden;
+
+    svg {
+      border-radius: 15px;
+      g {
+        g {
+          text {
+            fill: var(--theme-default);
+          }
+        }
+      }
+    }
   }
 }
 
+.candidcahrt {
+  width: 100%;
+  height: 470px;
+}
+
+.amcharts-export-canvas {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $white;
+
+  .canvas-container {
+    transition: opacity 0.5s ease-out;
+  }
+
+  &.active {
+    display: block;
+  }
+
+  &.dropbox .canvas-container {
+    opacity: 0.5;
+  }
+}
+
+.flot-chart-container {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  width: 100%;
+  height: 400px;
+
+  #toggling-series-flot {
+    width: 79% !important;
+  }
+}
+
+.all-chart {
+  .flot-chart-container {
+    height: 350px;
+  }
+}
 
 .flot-chart-placeholder {
   width: 100%;
@@ -57,16 +113,307 @@ $url-4: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAYAAADNo/U5AA
   }
 }
 
+.morris-hover {
+  position: absolute;
+  z-index: 1;
+
+  &.morris-default-style {
+    border-radius: 10px;
+    padding: 6px;
+    color: $dark-gray;
+    background: $white;
+    border: solid 1px $light-gray;
+    font-family: $font-serif;
+    font-size: 12px;
+    text-align: center;
+
+    .morris-hover-row-label {
+      font-weight: bold;
+      margin: 0.25em 0;
+    }
+
+    .morris-hover-point {
+      white-space: nowrap;
+      margin: 0.1em 0;
+    }
+  }
+}
+
+.chart-sparkline {
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  background: rgba(49, 49, 49, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+  color: $white;
+  font: 10px $font-lexend, $font-serif;
+  text-align: left;
+  white-space: nowrap;
+  padding: 5px;
+  border: 1px solid rgba(49, 49, 49, 0.75);
+  box-sizing: content-box;
+  z-index: 10000;
+  border-radius: 5px;
+
+  .jqsfield {
+    color: $white;
+    font: 10px $font-lexend, $font-serif;
+    text-align: left;
+  }
+}
+
+.radial-bar {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: transparent;
+  box-sizing: content-box;
+  width: 80px;
+  height: 80px;
+  font-size: 18px;
+  background-clip: content-box;
+
+  &:after {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 500;
+    color: $color-fiord;
+    content: attr(data-label);
+    background-color: $white;
+    z-index: 1;
+    width: 56px;
+    height: 56px;
+    margin-left: 12px;
+    margin-top: 12px;
+    line-height: 56px;
+  }
+
+  > img {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 500;
+    color: $color-fiord;
+    z-index: 3;
+    width: 56px;
+    height: 56px;
+    margin-left: 12px;
+    margin-top: 12px;
+    line-height: 56px;
+  }
+}
+
+.radial-bar-danger {
+  &.radial-bar-20 {
+    background-image: linear-gradient(90deg, $light-semi-gray 50%, transparent 50%, transparent), linear-gradient(162deg, $danger-color 50%, $light-semi-gray 50%, $light-semi-gray);
+  }
+}
+
+.radial-bar {
+  &.radial-bar-lg {
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+
+    &:after {
+      @extend %chart-1;
+    }
+
+    > img {
+      @extend %chart-1;
+    }
+  }
+
+  &.radial-bar-sm {
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+
+    &:after {
+      @extend %chart-2;
+    }
+
+    > img {
+      @extend %chart-2;
+    }
+  }
+
+  &.radial-bar-xs {
+    width: 30px;
+    height: 30px;
+    font-size: 8px;
+
+    &:after {
+      @extend %chart-3;
+    }
+
+    > img {
+      @extend %chart-3;
+    }
+  }
+}
+
 .pieLabel {
   div {
     color: $white !important;
 
-    input[type=checkbox] {
+    input[type="checkbox"] {
       margin: 7px;
     }
   }
 }
 
+// knob chart css
+.knob-chart {
+  min-height: 255px;
+
+  .chart-clock-main {
+    position: relative;
+    width: 200px;
+    margin: 45px auto;
+
+    .clock-large {
+      position: absolute;
+      left: -48px;
+      top: -45px;
+    }
+
+    .clock-medium {
+      position: absolute;
+      left: 2px;
+      top: 5px;
+    }
+
+    .clock-small {
+      position: absolute;
+      left: 15px;
+      top: 55px;
+    }
+  }
+}
+
+// peity chart css
+.peity-charts {
+  svg {
+    width: 100%;
+    height: 250px;
+  }
+
+  &.peity-chart-primary {
+    svg {
+      polygon {
+        fill: rgba($primary-color, 0.2);
+      }
+
+      polyline {
+        stroke: var(--theme-default);
+      }
+    }
+  }
+}
+
+.bar-odd-even {
+  svg {
+    rect {
+      &:nth-child(odd) {
+        fill: var(--theme-default);
+      }
+
+      &:nth-child(even) {
+        fill: var(--theme-secondary);
+      }
+    }
+  }
+}
+
+.donut-peity {
+  svg {
+    path {
+      &:nth-child(odd) {
+        fill: var(--theme-default);
+      }
+
+      &:nth-child(even) {
+        fill: var(--theme-secondary);
+      }
+    }
+  }
+}
+
+.small-donut,
+.donut-peity2,
+.pie-peity {
+  ~ svg,
+  svg {
+    path {
+      &:nth-child(odd) {
+        fill: var(--theme-default);
+      }
+
+      &:nth-child(even) {
+        fill: $light-semi-gray;
+      }
+    }
+  }
+}
+
+.small-donut2 {
+  ~ svg {
+    path {
+      &:nth-child(odd) {
+        fill: var(--theme-secondary);
+      }
+    }
+  }
+}
+
+.small-donut3 {
+  ~ svg {
+    path {
+      &:nth-child(odd) {
+        fill: $success-color;
+      }
+    }
+  }
+}
+
+.small-donut4 {
+  ~ svg {
+    path {
+      &:nth-child(odd) {
+        fill: $info-color;
+      }
+    }
+  }
+}
+
+.small-donut5 {
+  ~ svg {
+    path {
+      &:nth-child(odd) {
+        fill: $warning-color;
+      }
+    }
+  }
+}
+
+.small-donut6 {
+  ~ svg {
+    path {
+      &:nth-child(odd) {
+        fill: $danger-color;
+      }
+    }
+  }
+}
 
 p {
   &.data-attributes {
@@ -76,6 +423,23 @@ p {
   }
 }
 
+// knob chart
+.knob-block {
+  position: relative;
+
+  input {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin-left: 0 !important;
+    margin-top: -3px !important;
+    color: var(--light-bg-primary) !important;
+  }
+}
 
 .knob-input-disable {
   input {
@@ -100,15 +464,41 @@ p {
   height: 400px;
 }
 
-// echart css
+// chartist chat
+.ct-series-a {
+  .ct-slice-pie,
+  .ct-slice-donut-solid,
+  .ct-area {
+    fill: var(--theme-default);
+  }
 
+  .ct-point,
+  .ct-line,
+  .ct-bar,
+  .ct-slice-donut {
+    stroke: var(--theme-default);
+  }
+}
+
+.test-buttons {
+  button {
+    + button {
+      margin-left: 10px;
+    }
+  }
+}
+
+.clip-chart-wrapper {
+  .test-chart-block {
+    margin-bottom: -30px;
+  }
+}
 
 #dotted {
   height: 390px;
 }
 
 .apexcharts-canvas {
-
   .apexcharts-tooltip,
   .apexcharts-xaxistooltip,
   .apexcharts-yaxistooltip {
@@ -118,7 +508,7 @@ p {
 
 .flot-chart-container {
   .flot-chart-placeholder {
-    ~p.float-end {
+    ~ p.float-end {
       @media (max-width: 1346px) {
         float: left !important;
 
@@ -131,5 +521,5 @@ p {
 }
 
 /**=====================
-    3.5 Chat CSS End
+    3.6 Chat CSS End
 ==========================**/
