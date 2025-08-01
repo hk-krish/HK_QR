@@ -52,29 +52,34 @@
   background: unset;
   z-index: 2;
 }
-
 .toggle-sidebar {
   position: absolute;
-  right: 18px;
-  top: 21px;
-  cursor: pointer !important;
-  background-color: rgba(36, 42, 54, 0.1);
-  border-radius: 5px;
-  padding: 5px 7px;
-
-  svg {
-    width: 20px;
-    height: 20px;
-    -webkit-transform: rotate(0deg);
+  right: 25px;
+  top: 25px;
+  cursor: pointer; 
+  background-color: rgba(variables.$primary-color , 0.1);
+  padding: 7px;
+  border-radius: 6px;
+  line-height: 0.7;
+  svg { 
+    width: variables.$page-title-font-size;
+    height: variables.$page-title-font-size;
+    stroke: variables.$theme-font-color;
     transform: rotate(0deg);
-    -webkit-transition: all 0.6s ease-in-out;
-    transition: all 0.6s ease-in-out;
+    transition: all .9s ease-in-out;
   }
-
   &:hover {
-    > svg {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
+    >svg {
+      color: rgba(variables.$primary-color, 0.07) !important;
+      transform: rotate(360deg); 
+    }
+  }
+  &:hover {
+    &:before {
+      height: 40px;
+      width: 40px;
+      transform: scale(1);
+      transition: all 0.3s ease;
     }
   }
 }

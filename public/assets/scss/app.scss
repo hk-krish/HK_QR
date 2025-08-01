@@ -1,9 +1,12 @@
-// @import "bootstrap/dist/css/bootstrap.min.css";
+@use "sass:color";
+
+@use "bootstrap/dist/css/bootstrap.min.css";
+
 // @import "react-toastify/dist/ReactToastify.css";
 
 // @import "vendors/font-awesome.scss";
-// @import "responsive.scss";
-// @import "react-plugin.scss";
+// @use "./themes/responsive";
+// @use "react-plugin.scss";
 
 //swiper
 // @import "swiper/css";

@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  background: url("../images/login/login_bg.jpg");
+  // background: url("../images/login/login_bg.jpg");
   background-position: center;
   padding: 30px 12px;
 
@@ -55,7 +55,47 @@
     box-shadow: 0 0 37px rgba(8, 21, 66, 0.05);
     margin: 0 auto;
     background-color: $white;
-
+    .input-box {
+      margin-bottom: 15px;
+      label {
+        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+        font-weight: 700;
+        text-transform: capitalize;
+        color: #3d3d3d;
+        padding-top: 0px;
+      }
+      input {
+        position: relative;
+        background-color: #fff;
+        padding: 10px 16px;
+        border: 1px dashed #dedbdb !important;
+        width: 100%;
+        border-radius: 4px;
+        &:focus,
+        &:focus-visible {
+          outline: none !important;
+        }
+      }
+      .show-hide {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        span {
+          cursor: pointer;
+          font-size: 13px;
+          color: var(--theme-default);
+          &.show {
+            &:before {
+              content: "show";
+            }
+          }
+          &:before {
+            content: "hide";
+          }
+        }
+      }
+    }
     .theme-form {
       h4 {
         margin-bottom: 5px;
