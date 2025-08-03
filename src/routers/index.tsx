@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout";
 import { ROUTES } from "../constants";
 import Login from "../auth/login";
+import Dashboard from "../components/dashboard";
 
 export const Router = createBrowserRouter([
   {
@@ -10,7 +11,7 @@ export const Router = createBrowserRouter([
       {
         element: <Layout />,
         children: [
-          { path: ROUTES.HOME, element: <div></div> },
+          { path: ROUTES.HOME, element: <Dashboard /> },
           // { path: ROUTES.MANAGE_USERS, element: <ManageUsers /> },
           // { path: ROUTES.MANAGE_TEAM, element: <ManageTeams /> },
           // { path: ROUTES.PROFILE, element: <UserProfileContainer /> },
